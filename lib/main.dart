@@ -1,3 +1,4 @@
+import 'package:animations/doggo/doggo_page.dart';
 import 'package:flutter/material.dart';
 
 import 'hero/hero.dart';
@@ -14,11 +15,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Animations',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      routes: {'/hero': (context) => const HeroScreen()},
-      home: Container(),
+      routes: {
+        '/hero': (context) => const HeroScreen(),
+        '/doggo': (context) => const DoggoPage()
+      },
+      initialRoute: '/doggo',
     );
   }
 }
