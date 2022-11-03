@@ -50,42 +50,38 @@ class _DoggoPageState extends State<DoggoPage> {
           input!.value = !input!.value;
         },
         child: Center(
-            child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: SizedBox(
-            height: 124,
-            width: MediaQuery.of(context).size.width,
-            child: Stack(
-              children: [
-                Positioned(
-                  bottom: 0,
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    child: TextField(
-                      focusNode: focusNode,
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          hintText: 'Type me',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide:
-                                  const BorderSide(color: Colors.white))),
+            child: SizedBox(
+              height: 124,
+              width: MediaQuery.of(context).size.width,
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: TextField(
+                        focusNode: focusNode,
+                        decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintText: 'Type me',
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                borderSide: const BorderSide(color: Colors.white))),
+                      ),
                     ),
                   ),
-                ),
-                if (_riveArtBoard != null)
-                  Positioned(
-                      right: 0,
-                      top: 0,
-                      child: SizedBox(
-                          width: 100,
-                          height: 100,
-                          child: Rive(artboard: _riveArtBoard!)))
-              ],
-            ),
-          ),
-        )),
+                  if (_riveArtBoard != null)
+                    Positioned(
+                        right: 30,
+                        top: 0,
+                        child: SizedBox(
+                            width: 100,
+                            height: 100,
+                            child: Rive(artboard: _riveArtBoard!)))
+                ],
+              ),
+            )),
       ),
     );
   }
